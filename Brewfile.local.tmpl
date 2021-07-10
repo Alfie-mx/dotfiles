@@ -5,6 +5,12 @@
 
 cask_args appdir: "~/Applications"
 
+
+# Utilities for macOS
+brew 'mas'               # Mac App Store command line interface
+brew 'dockutil'          # Tool for managing macOS dock items
+
+
 # Install these on home machines only
 {{- if eq .location "home" }}
 cask 'alfred'
@@ -17,3 +23,5 @@ cask 'alfred'
 cask 'harvest'
 cask 'iterm2'
 {{- end }}
+
+
