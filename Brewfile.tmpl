@@ -3,25 +3,51 @@
 ##
 
 
-cask_args appdir: "~/Applications"
+cask_args appdir: "/Applications"
+
+################################################################
+# Tap Homebrew
 
 
+################################################################
+# System
+
+brew 'coreutils'         # GNU core utilities (those that come with macOS are outdated)
+brew 'moreutils'
+brew 'zsh'
+brew 'zsh-completions'
+
+################################################################
 # Utilities for macOS
 brew 'mas'               # Mac App Store command line interface
 brew 'dockutil'          # Tool for managing macOS dock items
 
 
+################################################################
+# Apps
+
+cask 'alfred'
+
+cask 'iterm2'
+cask "visual-studio-code"
+
+cask "spotify"
+
+
 # Install these on home machines only
 {{- if eq .location "home" }}
-cask 'alfred'
 cask 'iterm2'
 {{- end }}
 
 # Install these on work machines only
 {{- if eq .location "work" }}
-cask 'alfred'
 cask 'harvest'
-cask 'iterm2'
+cask 'spectacle'
+cask 'postman'
+cask "slack"
+cask "coda"
+cask "transmit"
+cask "jetbrains-toolbox"
 {{- end }}
 
 
