@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+
+###############################################################################
+# System
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Finder: show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Finder: show path bar
+defaults write com.apple.finder ShowPathbar -bool true
