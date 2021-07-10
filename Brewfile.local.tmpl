@@ -1,0 +1,19 @@
+##
+## Brewfile
+##
+
+
+cask_args appdir: "~/Applications"
+
+# Install these on home machines only
+{{- if eq .location "home" }}
+cask 'alfred'
+cask 'iterm2'
+{{- end }}
+
+# Install these on work machines only
+{{- if eq .location "work" }}
+cask 'alfred'
+cask 'harvest'
+cask 'iterm2'
+{{- end }}

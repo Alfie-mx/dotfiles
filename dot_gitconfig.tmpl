@@ -1,0 +1,24 @@
+[user]
+	name = Alfredo
+	email = "{{ .email }}"
+[core]
+	excludesfile = /Users/alfredo/.gitignore_global
+[alias]
+	a = "add ."
+	c = commit
+	p = push
+	s = status -sb
+	l = log --graph --pretty=format: '%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ll = log --pretty=oneline --graph --abbrev-commit
+	lm = log --pretty=format:'* %s (%h)'
+	lg = log -p
+	m = !"bash -c 'git branch | grep -v 'master' | xargs git branch -D'"
+	nah = !"bash -c 'git reset --hard && git clean -df'"
+	master = checkout master
+	ca = !git add -A && git commit -av
+	fcm = "!f() { git log --pretty=format:'%C(yellow)%h %Cblue%ad %Creset%s%Cgreen [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+	gst = git status
+	gb = git branch
+	gl = "git log --oneline --decorate --color"
+	gnuke = "git clean -df && git reset --hard"
+[pull]
