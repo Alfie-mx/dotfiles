@@ -1,0 +1,4 @@
+for file in ~/.zsh_{functions*,aliases}; do
+    [ -r "$file" ]  && source "$file"
+done
+unset file
